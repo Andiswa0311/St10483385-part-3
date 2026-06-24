@@ -1,0 +1,392 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*styling slide show here!*/
+.slideshow-container{
+    position: relative;
+    margin: 5px 0 0 0;
+    max-height: 500px;
+}
+
+.myslides{
+    display: none;
+}
+
+.prev,
+.next
+{
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0,6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next
+{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover
+{
+  background-color: black;
+}
+
+.text
+{
+    color: aliceblue;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
+
+.numbertext
+{
+    color:aliceblue;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot
+{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    display: inline-block;
+    transition:background-colour 0.6s ease;
+}
+
+.active,
+.dot:hover
+{
+    background-color: azure;
+}
+
+.fade
+{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade
+{
+    from
+    {
+        opacity: .4;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+body
+ {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: coral;
+    background-image: url(../img/Img18.jpg);
+    background-size: cover;
+ }
+nav 
+{
+    background-color: white;
+    box-shadow: 0px, 2px 6px rgb(3, 238, 101, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+}
+
+.nav-links
+{
+    list-style: none;
+    display: flex;
+    gap: 90px;
+}
+
+.nav-links li
+{
+    position: relative;
+}
+
+.nav-links a
+{
+    color: green;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover 
+{
+   background-color: rgb(5, 80, 150);
+   border-radius: 10px;
+}
+
+.submenu 
+{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: crimson;
+    list-style: none;
+    min-width: 4px;
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.submenu li a 
+{
+    padding: 10px 15px;
+    color: aqua;
+}
+
+.submenu li a:hover 
+{
+    background-color: blueviolet;
+}
+
+@media (min-width:769px)
+{
+    .nav-links li:hover>.submenu{
+        display: block;
+    }
+}
+
+.hamburger 
+{
+    display: none;
+    flex-direction: column;
+    cursor:pointer;
+}
+
+.hamburger span 
+{
+    height: 3px;
+    width: 25px;
+    background: orange;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px)
+{
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links 
+    {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: brown;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-heigth 0,3s ease-out;
+    }
+
+    .nav-links a:hover 
+    {
+        background-color: cornsilk;
+        border-radius: 4px;
+    }
+
+    .nav-links .open 
+    {
+        max-height: 500px;
+    }
+
+    .nav-links li 
+    {
+        width: 100%;
+    }
+
+    .submenu 
+    {
+        position: static;
+        display: none;
+        background-color: cadetblue;
+
+    }
+
+    .submenu.open 
+    {
+        display: block;
+    }
+
+    .nav-links a 
+    {
+        padding: 15px;
+    }
+}
+
+.hamburger.active span:nth-child(1)
+{
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2)
+{
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3)
+{
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+#fname,
+#lname,
+#ename
+#subject
+{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#submit
+{
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#fname:hover,
+#lname:hover,
+#ename:hover,
+#subject:hover
+{
+    background-color: peru;
+}
+
+.container 
+{
+    border-radius: 5px;
+    background-color: cadetblue;
+    padding: 20px;
+    margin:10px 500px 100px 500px;
+
+}
+
+/*Footer styling starts here!*/
+footer 
+{
+    background-color: gray;
+    color: white;
+    padding: 60px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo h2
+{
+    font-size: 24px;
+    margin: 10px;
+    color: blue;
+}
+
+.footer-logo p
+{
+    font-size: 14px;
+    line-height: 1.6;
+    color:chartreuse;
+}
+
+.footer-links ul
+{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li
+{
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a 
+{
+    color: chartreuse;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover
+{
+    color: gold;
+}
+
+.footer.contact p
+{
+    font-size: 14px;
+    margin: 8px 0;
+
+}
+
+.footer-social a
+{
+    display: inline-block;
+    margin-right: 10px;
+    color: cornflowerblue;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-bottom
+{
+    background-color: black;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color:beige
+
+}
+
+@media (max-width: 768px){
+    footer {
+        text-align: center;
+    }
+
+}
+
